@@ -1,5 +1,6 @@
 Letarts::Application.routes.draw do
   get "user/signup"
+  post "user/signup_complete"
   get "user/login"
   get "user/logout"
   get "wall/write"
