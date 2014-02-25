@@ -1,2 +1,10 @@
-<h1>User#login</h1>
-<p>Find me in app/views/user/login.html.erb</p>
+<div>
+  <h4><%= flash[:alert] %></h4>
+<div style="background-color: yellow;">
+  <h1>Log In</h1>
+  <form action="/user/login_complete" method="post">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Log In"> <a href="/user/signup">Sign Up</a>
+  </form>
+</div>
