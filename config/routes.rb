@@ -5,6 +5,7 @@ Letarts::Application.routes.draw do
   post "user/login_complete"
   get "user/logout"
   get "wall/write"
+  post "wall/write_complete"
   get "wall/post"
   get "wall/edit"
   get "wall/delete"

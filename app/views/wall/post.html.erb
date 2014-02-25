@@ -1,4 +1,19 @@
 <div>
   <h4><%= flash[:alert] %></h4>
   <a href="/user/logout">Log Out</a>
+  <h1>Write Post</h1>
+  <form action="/wall/write_complete" method="post">
+    Name: <%= @current_user.username %><br>
+    Content: <br>
+    <textarea name="content" cols="40" rows="5" placeholder="What's up?"></textarea>
+    <input type="submit" value="write">
+  </form>
+
+  <h1>Recent Posts</h1>
+  <% @posts.reverse.each do |post| %>
+    <div style="background-color: #ffffff; width: 400px; border: 2px solid #d3d6db; padding: 10px; word-break: break-all;">
+      <h3 style="color: blue;"><%= post.name %></h3> <p style="font-size:70%"><%= post.created_at %></p>
+      <p><%= post.content %></p>
+    </div><br>
+  <% end %>
 </div>
