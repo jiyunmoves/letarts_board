@@ -20,7 +20,15 @@ class WallController < ApplicationController
     @posts=Post.all
   end
 
-  def edit
+  def edit_complete
+    p=Post.find(param[:id])
+    p.content=params[:content_edit]
+    if p.save
+      redirect_to "/wall/post"
+    else
+      flash[:alert]=p.errors[:content][0]
+      redirect_to :back
+    end
   end
 
   def delete_complete
@@ -30,6 +38,13 @@ class WallController < ApplicationController
     redirect_to "/wall/post"
   end
 
-  def comment
+  def comment_complete
+    c=Comment.new
+    c.post_id=params[:post_id]
+    c.name=@current_user.username
+    c.content=params[:content]
+    c.save
+
+    redirect_to "/wall/post"
   end
 end

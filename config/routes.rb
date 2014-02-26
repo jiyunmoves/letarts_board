@@ -4,13 +4,11 @@ Letarts::Application.routes.draw do
   get "user/login"
   post "user/login_complete"
   get "user/logout"
-  get "wall/write"
   post "wall/write_complete"
   get "wall/post"
-  get "wall/edit"
-  get "wall/delete"
+  post "wall/edit_complete"
   post "wall/delete_complete"
-  get "wall/comment"
+  post "wall/comment_complete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
