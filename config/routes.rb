@@ -9,6 +9,7 @@ Letarts::Application.routes.draw do
   get "wall/post"
   get "wall/edit"
   get "wall/delete"
+  post "wall/delete_complete"
   get "wall/comment"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

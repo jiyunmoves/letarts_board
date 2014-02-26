@@ -23,7 +23,11 @@ class WallController < ApplicationController
   def edit
   end
 
-  def delete
+  def delete_complete
+    p=Post.find(params[:id])
+    p.destroy
+
+    redirect_to "/wall/post"
   end
 
   def comment
